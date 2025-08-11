@@ -1490,7 +1490,6 @@ class DreameVacuumProtocol:
             info = self.send("miIO.info", retry_count=retry_count)
             if info and (self.prefer_cloud or not self.device) and self.device_cloud:
                 self._connected = True
-            return response
         if not self.prefer_cloud:
             dev = Device(self.ip, self._token)
             info = dev.info().data
