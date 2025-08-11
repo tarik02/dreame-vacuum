@@ -1096,7 +1096,7 @@ class DreameMapVacuumMapManager:
                 and len(obstacle.file_name) > 1
                 and obstacle.key
                 and len(obstacle.key) > 1
-                and (obstacle.picture_status is None or obstacle.picture_status.value == 2)
+                and (obstacle.picture_status is not None or obstacle.picture_status.value == 2)
             ):
                 try:
                     object_name = f"{obstacle.type.value}_{obstacle.x}00000_{obstacle.y}00000"
@@ -7494,10 +7494,10 @@ class DreameVacuumMapRenderer:
                         continue
                     if (
                         not self.config.stain
-                        and v.type != ObstacleType.LIQUID_STAIN
-                        and v.type != ObstacleType.DRIED_STAIN
-                        and v.type != ObstacleType.MIXED_STAIN
-                        and v.type != ObstacleType.DETECTED_STAIN
+                        and not (v.type != ObstacleType.LIQUID_STAIN
+                        or v.type != ObstacleType.DRIED_STAIN
+                        or v.type != ObstacleType.MIXED_STAIN
+                        or v.type != ObstacleType.DETECTED_STAIN)
                     ):
                         continue
                     elif not self.config.pet and v.type == ObstacleType.PET:

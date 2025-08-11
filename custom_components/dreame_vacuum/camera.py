@@ -54,7 +54,6 @@ from .dreame.const import (
     ATTR_RECOVERY_MAP_FILE,
     ATTR_WIFI_MAP_PICTURE,
     ATTR_COLOR_SCHEME,
-    ATTR_ROOMS
 )
 from .dreame.map import (
     DreameVacuumMapRenderer,
@@ -980,7 +979,7 @@ class DreameVacuumCameraEntity(DreameVacuumEntity, Camera):
                                     )
                                     and not self.device.status.ai_fluid_detection
                                 )
-                                or (obstacle.picture_status is not None and obstacle.picture_status.value != 2)
+                                #or (obstacle.picture_status is not None and obstacle.picture_status.value != 2)
                             ):
                                 index = index - 1
                                 continue
@@ -1032,4 +1031,3 @@ class DreameVacuumCameraEntity(DreameVacuumEntity, Camera):
                         int(wifi_map_data.last_updated if wifi_map_data.last_updated else map_data.last_updated),
                     )
             return attributes
-        return None
