@@ -274,6 +274,7 @@ To submit your changes please fork `dev` branch of this repository and open a pu
  - [Xiaomi Cloud Map Extractor](https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor) by [@PiotrMachowski](https://github.com/PiotrMachowski)
  - Dreame cloud authentication by [@kuudori](https://github.com/kuudori)
  - Mova cloud help by [@r1si](https://github.com/r1si)
+ - Valetudo support [@riboyama](https://github.com/riboyama)
 
 
 ## Do not forget to support the project!
